@@ -19,7 +19,7 @@ app.use(morgan("tiny"));
 app.use(authJwt());
 app.use(errorHandler);
 
-//Routes
+//Routes to user
 const productsRouter = require("./routers/products");
 const categoriesRouter = require("./routers/categories");
 const usersRouter = require("./routers/users");
