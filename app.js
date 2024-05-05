@@ -16,7 +16,7 @@ require("dotenv/config");
 //middleware
 app.use(bodyParser.json());
 app.use(morgan("tiny"));
-app.use(authJwt());
+// app.use(authJwt());
 app.use(errorHandler);
 
 //Routes to user
@@ -26,7 +26,7 @@ const usersRouter = require("./routers/users");
 
 const api = process.env.API_URL;
 
-app.use("/test", (req, res) => {
+app.get("/", (req, res) => {
   console.log("Hi");
   res.send("App is ok");
 });
@@ -47,7 +47,7 @@ mongoose
     console.log(err);
   });
 console.log("hi");
-// app.listen(8000, () => {
-//   console.log(api);
-//   console.log("server is running on http://localhost:3000");
-// });
+app.listen(8000, () => {
+  console.log(api);
+  console.log("server is running on http://localhost:3000");
+});
