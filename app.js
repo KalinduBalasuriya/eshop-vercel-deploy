@@ -26,7 +26,7 @@ const usersRouter = require("./routers/users");
 
 const api = process.env.API_URL;
 
-app.use("/", (req, res) => {
+app.use("/test", (req, res) => {
   console.log("Hi");
   res.send("App is ok");
 });
