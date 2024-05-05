@@ -26,6 +26,10 @@ const usersRouter = require("./routers/users");
 
 const api = process.env.API_URL;
 
+app.use("/", (req, res) => {
+  console.log("Hi");
+  res.send("App is ok");
+});
 app.use(`${api}/products`, productsRouter);
 app.use(`${api}/categories`, categoriesRouter);
 app.use(`${api}/users`, usersRouter);
@@ -42,8 +46,8 @@ mongoose
   .catch((err) => {
     console.log(err);
   });
-
-app.listen(8000, () => {
-  console.log(api);
-  console.log("server is running on http://localhost:3000");
-});
+console.log("hi");
+// app.listen(8000, () => {
+//   console.log(api);
+//   console.log("server is running on http://localhost:3000");
+// });
